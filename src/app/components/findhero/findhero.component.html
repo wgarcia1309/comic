@@ -1,8 +1,5 @@
-<h1 *ngIf="heroes">Heroes <small>Marvel y DC </small></h1>
-<h1 *ngIf="!heroes">Villanos <small>Marvel y DC </small></h1>
-<hr>
 <div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let heros of hero; let idx = index;">
+    <div class="card animated fadeIn fast" *ngFor="let heros of heroes; let idx = index;">
         <!-- <img src="{{heros.img}}" class="card-img-top" alt="{{heros.nombre}}"> -->
         <img [src]="heros.img" class="card-img-top" [alt]="heros.nombre">
         <div class="card-body">

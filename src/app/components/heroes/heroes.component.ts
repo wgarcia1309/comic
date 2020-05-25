@@ -13,13 +13,21 @@ export class HeroesComponent implements OnInit {
   
   // hero:any[]=[];
   hero:Hero[]=[];
+  heroes: boolean = false;
+
   constructor( private _heroService: HeroService, private _router: Router) { 
 
   }
 
   ngOnInit(): void {
-    this.hero = this._heroService.getHeros();
-    console.log(this.hero);
+
+    if (this._router.url == '/heroes') {
+      this.hero = this._heroService.getHeros();
+      this.heroes=true;
+    }else{
+      this.heroes=false;
+      this.hero = this._heroService.getVillains();
+    }
   }
   
   verHeroe(id:number){
